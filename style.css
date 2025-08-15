@@ -70,25 +70,24 @@ section {
     text-align: center;
 }
 
-/* Headings with centered animated underline */
+/* Headings with centered underline */
 h2 {
     color: var(--secondary);
     font-size: 2rem;
     margin-bottom: 1.5rem;
-    display: block;
-    text-align: center;
+    text-align: center; /* center the heading text */
     position: relative;
 }
 
 h2::after {
     content: "";
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%) scaleX(0); /* centered + animation start */
+    display: block;
     width: 80px;
     height: 3px;
     background: var(--primary);
-    bottom: -0.5rem; /* position just below heading */
+    margin: 0.5rem auto 0; /* center underline under text */
+    transform: scaleX(0);
+    transform-origin: center;
     animation: underlineSlide 0.6s ease forwards;
 }
 
@@ -165,7 +164,7 @@ footer {
 
 @keyframes underlineSlide {
     to {
-        transform: translateX(-50%) scaleX(1);
+        transform: scaleX(1);
     }
 }
 
