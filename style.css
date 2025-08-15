@@ -6,18 +6,20 @@
     --text: #333;
 }
 
+/* Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    text-align: center;
 }
 
+/* Base styles */
 body {
     font-family: 'Poppins', sans-serif;
     background-color: var(--bg);
     color: var(--text);
     line-height: 1.6;
+    text-align: left; /* Default text alignment */
 }
 
 /* Header */
@@ -47,6 +49,7 @@ nav {
     display: flex;
     justify-content: center;
     gap: 2rem;
+    text-align: center;
 }
 
 nav a {
@@ -72,6 +75,7 @@ h2 {
     font-size: 2rem;
     margin-bottom: 1rem;
     position: relative;
+    text-align: left;
 }
 
 h2::after {
@@ -81,6 +85,11 @@ h2::after {
     height: 3px;
     background: var(--primary);
     margin-top: 0.5rem;
+}
+
+/* Paragraphs and Lists */
+section p, section li {
+    text-align: left;
 }
 
 /* About */
@@ -102,6 +111,7 @@ h2::after {
     overflow: hidden;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     transition: transform 0.3s, box-shadow 0.3s;
+    text-align: left;
 }
 
 .project-card:hover {
@@ -115,6 +125,12 @@ h2::after {
 
 .project-content h3 {
     margin-bottom: 0.5rem;
+}
+
+/* Experience entries */
+.experience-entry {
+    margin-bottom: 2rem;
+    text-align: left;
 }
 
 /* Contact */
@@ -146,4 +162,21 @@ footer {
 @keyframes fadeInUp {
     from { transform: translateY(20px); opacity: 0; }
     to { transform: translateY(0); opacity: 1; }
+}
+
+/* Resume download button */
+.btn {
+    display: inline-block;
+    background: var(--primary);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.3s;
+    margin-top: 1rem;
+}
+
+.btn:hover {
+    background: var(--secondary);
 }
