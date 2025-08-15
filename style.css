@@ -15,11 +15,12 @@
 
 /* Base styles */
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
     background-color: var(--bg);
     color: var(--text);
     line-height: 1.6;
     text-align: center; /* center-align everything */
+    font-weight: 400;
 }
 
 /* Header */
@@ -32,12 +33,13 @@ header {
 
 header h1 {
     font-size: 3rem;
-    font-weight: 700;
+    font-weight: 700; /* Inter Bold */
     animation: fadeInDown 1s ease;
 }
 
 header p {
     font-size: 1.3rem;
+    font-weight: 400; /* Inter Regular */
     opacity: 0.9;
     animation: fadeInUp 1s ease;
 }
@@ -54,7 +56,7 @@ nav {
 nav a {
     color: white;
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 500; /* Inter Medium */
     transition: color 0.3s;
 }
 
@@ -70,30 +72,20 @@ section {
     text-align: center;
 }
 
-/* Headings with centered underline */
+/* Headings */
 h2 {
     color: var(--secondary);
     font-size: 2rem;
     margin-bottom: 1.5rem;
-    text-align: center; /* center the heading text */
+    text-align: center;
     position: relative;
-}
-
-h2::after {
-    content: "";
-    display: block;
-    width: 80px;
-    height: 3px;
-    background: var(--primary);
-    margin: 0.5rem auto 0; /* center underline under text */
-    transform: scaleX(0);
-    transform-origin: center;
-    animation: underlineSlide 0.6s ease forwards;
+    font-weight: 700; /* Inter Bold */
 }
 
 /* Paragraphs and Lists */
 section p, section li {
     text-align: center;
+    font-weight: 400; /* Inter Regular */
 }
 
 /* Projects */
@@ -124,6 +116,7 @@ section p, section li {
 
 .project-content h3 {
     margin-bottom: 0.5rem;
+    font-weight: 600; /* Inter SemiBold */
 }
 
 /* Experience entries */
@@ -135,6 +128,7 @@ section p, section li {
 #contact a {
     color: var(--primary);
     text-decoration: none;
+    font-weight: 500;
 }
 
 #contact a:hover {
@@ -149,6 +143,7 @@ footer {
     padding: 1rem;
     margin-top: 2rem;
     font-size: 0.9rem;
+    font-weight: 400;
 }
 
 /* Animations */
@@ -183,4 +178,9 @@ footer {
 
 .btn:hover {
     background: var(--secondary);
+}
+
+/* Force Inter everywhere */
+body, h1, h2, h3, h4, h5, h6, p, a, li, button, input, textarea, .btn {
+    font-family: 'Inter', sans-serif;
 }
