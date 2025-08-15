@@ -19,6 +19,7 @@ body {
     background-color: var(--bg);
     color: var(--text);
     line-height: 1.6;
+    text-align: center; /* center-align everything by default */
 }
 
 /* Header */
@@ -63,10 +64,10 @@ nav a:hover {
 
 /* Sections */
 section {
-    max-width: 1100px;
+    max-width: 900px;
     margin: auto;
     padding: 3rem 1rem;
-    text-align: left; /* reset to left for all sections */
+    text-align: center; /* ensure section content is centered */
 }
 
 h2 {
@@ -74,7 +75,6 @@ h2 {
     font-size: 2rem;
     margin-bottom: 1rem;
     position: relative;
-    text-align: center; /* force heading text left */
 }
 
 h2::after {
@@ -83,13 +83,12 @@ h2::after {
     width: 50px;
     height: 3px;
     background: var(--primary);
-    margin-top: 0.5rem;
-    margin-left: 0 auto; /* keep underline aligned with heading */
+    margin: 0.5rem auto 0; /* center underline */
 }
 
 /* Paragraphs and Lists */
 section p, section li {
-    text-align: left;
+    text-align: center;
 }
 
 /* Projects */
@@ -106,71 +105,9 @@ section p, section li {
     overflow: hidden;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     transition: transform 0.3s, box-shadow 0.3s;
-    text-align: left;
+    text-align: center;
 }
 
 .project-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-}
-
-.project-content {
-    padding: 1.5rem;
-}
-
-.project-content h3 {
-    margin-bottom: 0.5rem;
-}
-
-/* Experience entries */
-.experience-entry {
-    margin-bottom: 2rem;
-}
-
-/* Contact */
-#contact a {
-    color: var(--primary);
-    text-decoration: none;
-}
-
-#contact a:hover {
-    text-decoration: underline;
-}
-
-/* Footer */
-footer {
-    background-color: var(--secondary);
-    color: white;
-    text-align: center;
-    padding: 1rem;
-    margin-top: 2rem;
-    font-size: 0.9rem;
-}
-
-/* Animations */
-@keyframes fadeInDown {
-    from { transform: translateY(-20px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
-}
-
-@keyframes fadeInUp {
-    from { transform: translateY(20px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
-}
-
-/* Resume download button */
-.btn {
-    display: inline-block;
-    background: var(--primary);
-    color: white;
-    padding: 0.75rem 1.5rem;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: 500;
-    transition: background 0.3s;
-    margin-top: 1rem;
-}
-
-.btn:hover {
-    background: var(--secondary);
-}
+\
