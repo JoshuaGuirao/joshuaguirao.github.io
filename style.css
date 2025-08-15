@@ -84,7 +84,7 @@ h2::after {
     height: 3px;
     background: var(--primary);
     margin-top: 0.5rem;
-    margin-left: 0; /* keep underline aligned with heading */
+    margin-left: center; /* keep underline aligned with heading */
 }
 
 /* Paragraphs and Lists */
