@@ -19,7 +19,6 @@ body {
     background-color: var(--bg);
     color: var(--text);
     line-height: 1.6;
-    text-align: left; /* Default text alignment */
 }
 
 /* Header */
@@ -49,7 +48,6 @@ nav {
     display: flex;
     justify-content: center;
     gap: 2rem;
-    text-align: center;
 }
 
 nav a {
@@ -68,6 +66,7 @@ section {
     max-width: 1100px;
     margin: auto;
     padding: 3rem 1rem;
+    text-align: left; /* reset to left for all sections */
 }
 
 h2 {
@@ -75,7 +74,7 @@ h2 {
     font-size: 2rem;
     margin-bottom: 1rem;
     position: relative;
-    text-align: left;
+    text-align: left; /* force heading text left */
 }
 
 h2::after {
@@ -85,16 +84,12 @@ h2::after {
     height: 3px;
     background: var(--primary);
     margin-top: 0.5rem;
+    margin-left: 0; /* keep underline aligned with heading */
 }
 
 /* Paragraphs and Lists */
 section p, section li {
     text-align: left;
-}
-
-/* About */
-#about p {
-    font-size: 1.1rem;
 }
 
 /* Projects */
@@ -130,7 +125,6 @@ section p, section li {
 /* Experience entries */
 .experience-entry {
     margin-bottom: 2rem;
-    text-align: left;
 }
 
 /* Contact */
