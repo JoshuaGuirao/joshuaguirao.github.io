@@ -129,6 +129,7 @@ section p, section li {
     color: var(--primary);
     text-decoration: none;
     font-weight: 500;
+    line-height: 2;
 }
 
 #contact a:hover {
