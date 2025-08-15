@@ -70,26 +70,25 @@ section {
     text-align: center;
 }
 
-/* Headings with animated underline */
+/* Headings with centered animated underline */
 h2 {
     color: var(--secondary);
     font-size: 2rem;
-    margin-bottom: 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    margin-bottom: 1.5rem;
+    display: block;
+    text-align: center;
     position: relative;
 }
 
 h2::after {
     content: "";
-    display: block;
-    width: 80px; /* longer underline */
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0); /* centered + animation start */
+    width: 80px;
     height: 3px;
     background: var(--primary);
-    margin-top: 0.5rem;
-    transform: scaleX(0);
-    transform-origin: center;
+    bottom: -0.5rem; /* position just below heading */
     animation: underlineSlide 0.6s ease forwards;
 }
 
@@ -166,4 +165,23 @@ footer {
 
 @keyframes underlineSlide {
     to {
-        transform: sc
+        transform: translateX(-50%) scaleX(1);
+    }
+}
+
+/* Resume download button */
+.btn {
+    display: inline-block;
+    background: var(--primary);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.3s;
+    margin-top: 1rem;
+}
+
+.btn:hover {
+    background: var(--secondary);
+}
