@@ -1,3 +1,6 @@
+/* Import Inter font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
 :root {
     --primary: #00b4d8;
     --secondary: #023e8a;
@@ -15,11 +18,12 @@
 
 /* Base styles */
 body {
-    font-family: Inter;
+    font-family: 'Inter', sans-serif;
     background-color: var(--bg);
     color: var(--text);
     line-height: 1.6;
     text-align: center; /* center-align everything */
+    font-weight: 400;
 }
 
 /* Header */
@@ -32,12 +36,13 @@ header {
 
 header h1 {
     font-size: 3rem;
-    font-weight: 700;
+    font-weight: 700; /* Inter Bold */
     animation: fadeInDown 1s ease;
 }
 
 header p {
     font-size: 1.3rem;
+    font-weight: 400; /* Inter Regular */
     opacity: 0.9;
     animation: fadeInUp 1s ease;
 }
@@ -54,121 +59,5 @@ nav {
 nav a {
     color: white;
     text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s;
-}
-
-nav a:hover {
-    color: var(--accent);
-}
-
-/* Sections */
-section {
-    max-width: 900px;
-    margin: auto;
-    padding: 3rem 1rem;
-    text-align: center;
-}
-
-/* Headings with centered underline */
-h2 {
-    color: var(--secondary);
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-    text-align: center; /* center the heading text */
-    position: relative;
-}
-
-/* Paragraphs and Lists */
-section p, section li {
-    text-align: center;
-}
-
-/* Projects */
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-    margin-top: 2rem;
-}
-
-.project-card {
-    background: white;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-    text-align: center;
-}
-
-.project-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-}
-
-.project-content {
-    padding: 1.5rem;
-}
-
-.project-content h3 {
-    margin-bottom: 0.5rem;
-}
-
-/* Experience entries */
-.experience-entry {
-    margin-bottom: 2rem;
-}
-
-/* Contact */
-#contact a {
-    color: var(--primary);
-    text-decoration: none;
-}
-
-#contact a:hover {
-    text-decoration: underline;
-}
-
-/* Footer */
-footer {
-    background-color: var(--secondary);
-    color: white;
-    text-align: center;
-    padding: 1rem;
-    margin-top: 2rem;
-    font-size: 0.9rem;
-}
-
-/* Animations */
-@keyframes fadeInDown {
-    from { transform: translateY(-20px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
-}
-
-@keyframes fadeInUp {
-    from { transform: translateY(20px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
-}
-
-@keyframes underlineSlide {
-    to {
-        transform: scaleX(1);
-    }
-}
-
-/* Resume download button */
-.btn {
-    display: inline-block;
-    background: var(--primary);
-    color: white;
-    padding: 0.75rem 1.5rem;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: 500;
-    transition: background 0.3s;
-    margin-top: 1rem;
-}
-
-.btn:hover {
-    background: var(--secondary);
-}
+    font-weight: 500; /* Inter Medium */
+    transition: co
