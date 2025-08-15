@@ -1,3 +1,6 @@
+/* Import Montserrat font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
 :root {
     --primary: #00b4d8;
     --secondary: #023e8a;
@@ -19,7 +22,7 @@ body {
     background-color: var(--bg);
     color: var(--text);
     line-height: 1.6;
-    text-align: center; /* center-align everything */
+    text-align: center;
     font-weight: 400;
 }
 
@@ -33,13 +36,13 @@ header {
 
 header h1 {
     font-size: 3rem;
-    font-weight: 700; /* Inter Bold */
+    font-weight: 700;
     animation: fadeInDown 1s ease;
 }
 
 header p {
     font-size: 1.3rem;
-    font-weight: 400; /* Inter Regular */
+    font-weight: 400;
     opacity: 0.9;
     animation: fadeInUp 1s ease;
 }
@@ -56,7 +59,7 @@ nav {
 nav a {
     color: white;
     text-decoration: none;
-    font-weight: 500; /* Inter Medium */
+    font-weight: 500;
     transition: color 0.3s;
 }
 
@@ -72,20 +75,37 @@ section {
     text-align: center;
 }
 
-/* Headings */
+/* ===== Enhanced Section Headings ===== */
 h2 {
     color: var(--secondary);
     font-size: 2rem;
-    margin-bottom: 1.5rem;
-    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    display: inline-block;
     position: relative;
-    font-weight: 700; /* Inter Bold */
+    padding-bottom: 0.6rem;
+    animation: fadeUp 0.8s ease both;
+}
+
+/* Gradient underline */
+h2::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 100px;
+    height: 4px;
+    border-radius: 2px;
+    background: linear-gradient(to right, var(--primary), var(--accent));
 }
 
 /* Paragraphs and Lists */
 section p, section li {
     text-align: center;
-    font-weight: 400; /* Inter Regular */
+    font-weight: 400;
 }
 
 /* Projects */
@@ -116,7 +136,7 @@ section p, section li {
 
 .project-content h3 {
     margin-bottom: 0.5rem;
-    font-weight: 600; /* Inter SemiBold */
+    font-weight: 600;
 }
 
 /* Experience entries */
@@ -129,7 +149,6 @@ section p, section li {
     color: var(--primary);
     text-decoration: none;
     font-weight: 500;
-    line-height: 2;
 }
 
 #contact a:hover {
@@ -158,10 +177,9 @@ footer {
     to { transform: translateY(0); opacity: 1; }
 }
 
-@keyframes underlineSlide {
-    to {
-        transform: scaleX(1);
-    }
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(15px); }
+    to   { opacity: 1; transform: translateY(0); }
 }
 
 /* Resume download button */
@@ -173,15 +191,16 @@ footer {
     border-radius: 6px;
     text-decoration: none;
     font-weight: 500;
-    transition: background 0.3s;
+    transition: background 0.3s, transform 0.15s ease;
     margin-top: 1rem;
 }
 
 .btn:hover {
     background: var(--secondary);
+    transform: translateY(-1px);
 }
 
-/* Force Inter everywhere */
+/* Force Montserrat everywhere */
 body, h1, h2, h3, h4, h5, h6, p, a, li, button, input, textarea, .btn {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
