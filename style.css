@@ -212,3 +212,7 @@ footer {
 body, h1, h2, h3, h4, h5, h6, p, a, li, button, input, textarea, .btn {
     font-family: 'Montserrat', sans-serif;
 }
+
+h2 { opacity: 0; transform: translateY(15px); transition: opacity .6s ease, transform .6s ease; }
+h2.active { opacity: 1; transform: translateY(0); }
+
