@@ -41,3 +41,20 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const headers = document.querySelectorAll("h2");
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("active");   // makes it visible
+        io.unobserve(entry.target);             // run once
+      }
+    });
+  }, { threshold: 0.35 });
+
+  headers.forEach(h => io.observe(h));
+});
+</script>
+
