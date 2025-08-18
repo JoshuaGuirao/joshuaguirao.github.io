@@ -142,7 +142,7 @@ footer {
 /* Footer contact links */
 footer a,
 footer a:visited {
-  color: #000;              /* black text by default */
+  color: #FFFFFF;              /* black text by default */
   text-decoration: none;    /* no underline */
   font-weight: 400;
   margin: 0 0.5rem;         /* spacing between links */
