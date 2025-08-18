@@ -141,15 +141,16 @@ footer {
 
 /* Footer contact links */
 footer a,
+footer a:link,
 footer a:visited {
-  color: #FFFFFF;           
-  text-decoration: none;    /* no underline */
+  color: #ffffff;          /* force white */
+  text-decoration: none;   /* remove underline */
   font-weight: 400;
-  margin: 0 0.5rem;         /* spacing between links */
+  margin: 0 0.5rem;
 }
 
 footer a:hover,
 footer a:focus-visible {
-  color: var(--accent);     /* accent on hover */
-  text-decoration: none;    /* keep underline removed */
+  color: var(--accent);    /* change on hover */
+  text-decoration: underline; /* optional: underline only on hover */
 }
