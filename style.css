@@ -42,31 +42,29 @@ header p {
 }
 
 /* ================== Navigation ================== */
+/* Navigation — works with <nav><a>…</a></nav> */
 nav {
   background-color: var(--secondary);
-  padding: 0.8rem;
-}
-
-nav ul {
-  list-style: none;
+  padding: 0.8rem 1rem;
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;           /* spacing between links */
+  flex-wrap: wrap;     /* wrap on small screens */
 }
 
-nav ul li {
-  margin: 0 1rem;
-}
-
-nav ul li a {
-  color: white;
+nav a,
+nav a:visited {        /* ensure visited links stay white */
+  color: #fff;
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.3s;
+  line-height: 1;      /* tighter vertical rhythm */
 }
 
-nav ul li a:hover {
+nav a:hover,
+nav a:focus-visible {
   color: var(--accent);
+  text-decoration: underline;
 }
 
 /* ================== Sections ================== */
