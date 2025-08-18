@@ -116,9 +116,21 @@ h2.active::after {
 }
 
 /* Paragraphs and Lists */
-section p, section li {
+section p {
     text-align: center;
     font-weight: 400;
+}
+
+section ul, section ol {
+    margin-left: 0;
+    padding-left: 1.2rem;
+    text-align: left;
+    list-style-position: outside;
+}
+
+section li {
+    font-weight: 400;
+    text-align: left;
 }
 
 /* Projects */
@@ -215,4 +227,3 @@ body, h1, h2, h3, h4, h5, h6, p, a, li, button, input, textarea, .btn {
 
 h2 { opacity: 0; transform: translateY(15px); transition: opacity .6s ease, transform .6s ease; }
 h2.active { opacity: 1; transform: translateY(0); }
-
