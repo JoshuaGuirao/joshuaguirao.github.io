@@ -41,6 +41,20 @@ header p {
   animation: fadeInUp 1s ease;
 }
 
+/* Contact info links */
+#contact a,
+#contact a:visited {
+  color: #000;              /* black by default */
+  text-decoration: underline;  /* keep underline */
+  font-weight: 400;
+}
+
+#contact a:hover,
+#contact a:focus-visible {
+  color: var(--accent);        /* hover = accent color */
+  text-decoration: underline;  /* stays underlined */
+}
+
 /* ================== Navigation ================== */
 /* Navigation — works with <nav><a>…</a></nav> */
 nav {
@@ -75,11 +89,24 @@ section {
   text-align: center;
 }
 
-h2 {
+/* Section headers */
+section h2 {
   font-size: 2rem;
-  margin-bottom: 1.5rem;
-  color: var(--secondary);
   font-weight: 700;
+  color: var(--secondary); /* dark blue */
+  text-align: center;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+section h2::after {
+  content: "";
+  display: block;
+  width: 60px;             /* length of underline */
+  height: 3px;             /* thickness */
+  background-color: var(--primary); /* accent color */
+  margin: 0.5rem auto 0;   /* spacing */
+  border-radius: 2px;      /* smooth edges */
 }
 
 /* ================== Lists ================== */
