@@ -22,7 +22,7 @@ body {
     background-color: var(--bg);
     color: var(--text);
     line-height: 1.6;
-    text-align: center;
+    text-align: center;   /* keep headings/paragraphs centered by default */
     font-weight: 400;
 }
 
@@ -38,13 +38,6 @@ header h1 {
     font-size: 3rem;
     font-weight: 700;
     animation: fadeInDown 1s ease;
-}
-
-header p {
-    font-size: 1.3rem;
-    font-weight: 400;
-    opacity: 0.9;
-    animation: fadeInUp 1s ease;
 }
 
 /* Navigation */
@@ -72,7 +65,7 @@ section {
     max-width: 900px;
     margin: auto;
     padding: 3rem 1rem;
-    text-align: center;
+    text-align: center; /* we’ll override just lists below */
 }
 
 /* ===== Enhanced Section Headings ===== */
@@ -86,7 +79,7 @@ h2 {
     display: inline-block;
     position: relative;
     padding-bottom: 0.6rem;
-    opacity: 0; /* start hidden until scrolled in */
+    opacity: 0;               /* start hidden until scrolled in */
     transform: translateY(15px);
     transition: opacity 0.6s ease, transform 0.6s ease;
 }
@@ -100,130 +93,23 @@ h2::after {
     height: 4px;
     border-radius: 2px;
     background: linear-gradient(to right, var(--primary), var(--accent));
-    transform: translateX(-50%) scaleX(0); /* hidden and scaled to 0 */
+    transform: translateX(-50%) scaleX(0);
     transform-origin: center;
     transition: transform 0.5s ease;
 }
 
 /* When active (scrolled into view) */
-h2.active {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-h2.active::after {
-    transform: translateX(-50%) scaleX(1);
-}
-
-/* Paragraphs and Lists */
-section p {
-    text-align: center;
-    font-weight: 400;
-}
-
-section ul, section ol {
-    margin-left: 0;
-    padding-left: 1.2rem;
-    text-align: left;
-    list-style-position: outside;
-}
-
-section li {
-    font-weight: 400;
-    text-align: left;
-}
-
-/* Projects */
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-    margin-top: 2rem;
-}
-
-.project-card {
-    background: white;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-    text-align: center;
-}
-
-.project-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-}
-
-.project-content {
-    padding: 1.5rem;
-}
-
-.project-content h3 {
-    margin-bottom: 0.5rem;
-    font-weight: 600;
-}
-
-/* Experience entries */
-.experience-entry {
-    margin-bottom: 2rem;
-}
-
-/* Contact */
-#contact a {
-    color: var(--primary);
-    text-decoration: none;
-    font-weight: 500;
-}
-
-#contact a:hover {
-    text-decoration: underline;
-}
-
-/* Footer */
-footer {
-    background-color: var(--secondary);
-    color: white;
-    text-align: center;
-    padding: 1rem;
-    margin-top: 2rem;
-    font-size: 0.9rem;
-    font-weight: 400;
-}
-
-/* Animations */
-@keyframes fadeInDown {
-    from { transform: translateY(-20px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
-}
-
-@keyframes fadeInUp {
-    from { transform: translateY(20px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
-}
-
-/* Resume download button */
-.btn {
-    display: inline-block;
-    background: var(--primary);
-    color: white;
-    padding: 0.75rem 1.5rem;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: 500;
-    transition: background 0.3s, transform 0.15s ease;
-    margin-top: 1rem;
-}
-
-.btn:hover {
-    background: var(--secondary);
-    transform: translateY(-1px);
-}
-
-/* Force Montserrat everywhere */
-body, h1, h2, h3, h4, h5, h6, p, a, li, button, input, textarea, .btn {
-    font-family: 'Montserrat', sans-serif;
-}
-
-h2 { opacity: 0; transform: translateY(15px); transition: opacity .6s ease, transform .6s ease; }
 h2.active { opacity: 1; transform: translateY(0); }
+h2.active::after { transform: translateX(-50%) scaleX(1); }
+
+/* Paragraphs */
+section p { text-align: center; font-weight: 400; }
+
+/* ===== Left-align ALL lists (bullets & numbers) ===== */
+section ul,
+section ol {
+    /* keep the list block centered in the section but text inside left-aligned */
+    margin: 0 auto 1rem;   /* auto centers the block itself */
+    padding-left: 1.25rem; /* room for markers */
+    text-align: left;      /* makes list text left-aligned */
+    list-style-position: outside;
