@@ -359,25 +359,6 @@ nav a {
   padding: 0.5rem 0;
 }
 
-nav a.home-btn {
-  color: var(--primary);
-  font-weight: 700;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  background: rgba(0, 180, 216, 0.1);
-  border: 1px solid var(--primary);
-  margin-right: 1rem;
-}
-
-nav a.home-btn:hover {
-  background: rgba(0, 180, 216, 0.2);
-  transform: translateX(-3px);
-}
-
-nav a.home-btn::after {
-  display: none;
-}
-
 nav a::after {
   content: '';
   position: absolute;
