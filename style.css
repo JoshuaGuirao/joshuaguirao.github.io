@@ -175,10 +175,28 @@ body {
 }
 
 .landing-subtitle {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   color: var(--text-secondary);
   margin-bottom: 0.5rem;
-  font-weight: 500;
+  font-weight: 600;
+  min-height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.role-text {
+  color: var(--primary);
+  font-weight: 700;
+  display: inline-block;
+  position: relative;
+  animation: fadeInOut 0.5s ease-in-out;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
 .landing-location {
@@ -681,7 +699,7 @@ footer a:hover {
 /* Responsive */
 @media (max-width: 768px) {
   .landing-title { font-size: 3rem; }
-  .landing-subtitle { font-size: 1.2rem; }
+  .landing-subtitle { font-size: 1.4rem; }
   .profile-image { width: 200px; height: 200px; }
   header h1 { font-size: 2.5rem; }
   section h2 { font-size: 2rem; }
