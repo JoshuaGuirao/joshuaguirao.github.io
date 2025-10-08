@@ -1,3 +1,28 @@
+// Role rotation animation
+const roles = ['SWE', 'Data Scientist', 'Fullstack Developer', 'Quantitative Trader'];
+let currentRoleIndex = 0;
+
+function rotateRole() {
+  const roleText = document.querySelector('.role-text');
+  if (roleText) {
+    // Fade out
+    roleText.style.opacity = '0';
+    roleText.style.transform = 'translateY(-10px)';
+    
+    setTimeout(() => {
+      currentRoleIndex = (currentRoleIndex + 1) % roles.length;
+      roleText.textContent = roles[currentRoleIndex];
+      
+      // Fade in
+      roleText.style.opacity = '1';
+      roleText.style.transform = 'translateY(0)';
+    }, 300);
+  }
+}
+
+// Start role rotation
+setInterval(rotateRole, 2500);
+
 // Smooth scroll for navigation
 document.querySelectorAll('nav a').forEach(link => {
   link.addEventListener('click', e => {
