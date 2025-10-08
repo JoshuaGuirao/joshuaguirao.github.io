@@ -24,8 +24,8 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, observerOptions);
 
-// Observe all sections
-document.querySelectorAll('section').forEach(section => {
+// Observe all sections except the landing page
+document.querySelectorAll('#portfolio section').forEach(section => {
   section.style.opacity = '0';
   section.style.transform = 'translateY(30px)';
   section.style.transition = 'all 0.8s ease';
@@ -34,7 +34,7 @@ document.querySelectorAll('section').forEach(section => {
 
 // Add active state to nav links on scroll
 window.addEventListener('scroll', () => {
-  const sections = document.querySelectorAll('section');
+  const sections = document.querySelectorAll('#portfolio section');
   const navLinks = document.querySelectorAll('nav a');
   
   let current = '';
@@ -57,7 +57,18 @@ window.addEventListener('scroll', () => {
 // Parallax effect for header
 window.addEventListener('scroll', () => {
   const header = document.querySelector('header');
-  const scrolled = window.pageYOffset;
-  header.style.transform = `translateY(${scrolled * 0.5}px)`;
-  header.style.opacity = 1 - scrolled / 500;
+  if (header) {
+    const scrolled = window.pageYOffset;
+    header.style.transform = `translateY(${scrolled * 0.5}px)`;
+    header.style.opacity = 1 - scrolled / 500;
+  }
+});
+
+// Add floating animation to background particles
+document.addEventListener('DOMContentLoaded', () => {
+  const particles = document.querySelectorAll('.bg-animation span');
+  particles.forEach((particle, index) => {
+    const randomX = Math.random() * 100;
+    particle.style.left = randomX + '%';
+  });
 });
