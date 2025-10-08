@@ -1,22 +1,63 @@
+// Smooth scroll for navigation
 document.querySelectorAll('nav a').forEach(link => {
   link.addEventListener('click', e => {
     e.preventDefault();
     const target = document.querySelector(link.getAttribute('href'));
-    if (target) target.scrollIntoView({ behavior: 'smooth' });
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   });
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-  const headers = document.querySelectorAll('h2');
+// Intersection Observer for fade-in animations
+const observerOptions = {
+  threshold: 0.2,
+  rootMargin: '0px 0px -100px 0px'
+};
 
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('active');
-        io.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.35 });
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+    }
+  });
+}, observerOptions);
 
-  headers.forEach(h => io.observe(h));
+// Observe all sections
+document.querySelectorAll('section').forEach(section => {
+  section.style.opacity = '0';
+  section.style.transform = 'translateY(30px)';
+  section.style.transition = 'all 0.8s ease';
+  observer.observe(section);
+});
+
+// Add active state to nav links on scroll
+window.addEventListener('scroll', () => {
+  const sections = document.querySelectorAll('section');
+  const navLinks = document.querySelectorAll('nav a');
+  
+  let current = '';
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.clientHeight;
+    if (scrollY >= sectionTop - 200) {
+      current = section.getAttribute('id');
+    }
+  });
+
+  navLinks.forEach(link => {
+    link.style.color = '';
+    if (link.getAttribute('href').slice(1) === current) {
+      link.style.color = 'var(--primary)';
+    }
+  });
+});
+
+// Parallax effect for header
+window.addEventListener('scroll', () => {
+  const header = document.querySelector('header');
+  const scrolled = window.pageYOffset;
+  header.style.transform = `translateY(${scrolled * 0.5}px)`;
+  header.style.opacity = 1 - scrolled / 500;
 });
