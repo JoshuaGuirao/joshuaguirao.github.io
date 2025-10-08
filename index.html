@@ -3,21 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Portfolio of Joshua Guirao" />
+  <meta name="description" content="Portfolio of Joshua Guirao - Computer Science & Quantitative Economics Student at Tufts University" />
   <title>Joshua Guirao | Portfolio</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
+  <div class="bg-animation">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
   <header>
     <h1>Joshua Guirao</h1>
     <p>
-      Coder ● Data Analyst ● Problem Solver<br>
+      SWE ● Data Analyst ● Fullstack Developerr<br>
       Singapore, Singapore | Medford, MA
     </p>
   </header>
@@ -33,49 +41,55 @@
   <section id="about">
     <h2>About Me</h2>
     <p>
-      I'm a rising sophomore currently double-majoring in Computer Science and Quantitative Economics at Tufts University. 
+      I'm a rising sophomore at Tufts University, double-majoring in Computer Science and Quantitative Economics with a minor in Mathematics. 
+      I'm passionate about leveraging technology and data to solve real-world problems, from building ML models for environmental sustainability 
+      to creating analytics platforms that empower nonprofits.
     </p>
   </section>
 
   <section id="resume">
     <h2>Resume</h2>
-    <p>You can download my full resume below:</p><br>
-    <a href="Joshua Guirao - Resume.pdf" download class="btn">Download</a>
+    <p>Download my complete resume to learn more about my background and experience</p>
+    <a href="Joshua Guirao - Resume.pdf" download class="btn">Download Resume</a>
   </section>
 
   <section id="skills">
     <h2>Skills</h2>
-    <ul>
-      <li><strong>Programming Languages:</strong> Python, Java, C++, SQL, HTML, CSS, JavaScript, VPython</li>
-      <li><strong>Platforms:</strong> Google Workspace, Microsoft Office Suite, Visual Studio Code, Apache NetBeans, JupyterLab</li>
-      <li><strong>Languages:</strong> English (fluent), Chinese (intermediate)</li>
-    </ul>
+    <div class="skills-container">
+      <div class="skill-category">
+        <h3>Programming Languages</h3>
+        <p>Python, Java, C++, SQL, HTML, CSS, JavaScript, VPython, Git</p>
+      </div>
+
+      <div class="skill-category">
+        <h3>Softwares</h3>
+        <p>Google Apps, Microsoft Suite, VS Code, Apache NetBeans, JupyterLab, GitHub</p>
+      </div>
+
+      <div class="skill-category">
+        <h3>Languages</h3>
+        <p>English (Fluent), Chinese (Intermediate), Filipino (Elementary)</p>
+      </div>
+    </div>
   </section>
 
   <section id="experience">
     <h2>Experience</h2>
 
     <div class="experience-entry">
-      <h3>FitMoney Fellow – FitMoney</h3>
-      <p><em>2025 – Present</em></p>
+      <h3>Software Developer – JumboCode</h3>
+      <p><em>Medford, MA | September 2025 – Present</em></p>
       <ul>
-        <li>Selected through a competitive application-based fellowship as a financial literacy educator with FitMoney, teaching an 8-module curriculum on budgeting, credit, investing, and compound interest to 200+ low-income and first-generation high school students across Greater Boston.</li>
-        <li>Coordinated with teachers and community partners to deliver accessible programming, fostering long-term financial skills.</li>
-      </ul>
-    </div>
-
-    <div class="experience-entry">
-      <h3>Developer – Trovr</h3>
-      <p><em>2025 – Present</em></p>
-      <ul>
-        <li>Conducted empathy mapping workshops to translate user pain points and behaviors into actionable design insights, ensuring product decisions were grounded in user needs and enhancing overall usability.</li>
-        <li>Developed Trovr features using Lovable’s rapid prototyping tools, collaborating with the team to create MVPs aligned with user requirements.</li>
+        <li>Building a full-stack analytics dashboard for School On Wheels Massachusetts to automate reporting of social media, newsletter, and website performance, enabling data-driven decision-making and reducing manual reporting.</li>
+        <li>Designed & implemented frontend components in React, Vite, and Tailwind CSS, creating responsive data visualizations for users.</li>
+        <li>Developed backend services with Node.js, Express, PostgreSQL, and Prisma, enabling daily snapshot storage and historical trend analysis across multiple APIs.</li>
+        <li>Contributed to feature branch development, code reviews, and sprint planning to ensure timely delivery of project milestones.</li>
       </ul>
     </div>
 
     <div class="experience-entry">
       <h3>Researcher – Tufts Idea Lab</h3>
-      <p><em>2025 – Present</em></p>
+      <p><em>Medford, MA | September 2025 – Present</em></p>
       <ul>
         <li>Contributing to Plastibot, a research initiative developing machine learning models with hyperspectral imaging to classify plastic types and create scalable, cost-efficient recycling solutions for real-world deployment.</li>
         <li>Collected and prepared hyperspectral image datasets by cutting and processing plastic samples to train machine learning classification models and analyze spectral data correlations.</li>
@@ -84,18 +98,26 @@
     </div>
 
     <div class="experience-entry">
-      <h3>Software Developer – JumboCode</h3>
-      <p><em>2025 – Present</em></p>
+      <h3>FitMoney Fellow – FitMoney</h3>
+      <p><em>Medford, MA | September 2025 – Present</em></p>
       <ul>
-        <li>Building a full-stack analytics dashboard for School On Wheels Massachusetts to automate reporting of social media, newsletter, and website performance, enabling data-driven decision-making and reducing manual reporting.</li>
-        <li>Developed backend services with Node.js, Express, PostgreSQL, and Prisma, enabling daily snapshot storage and historical trend analysis across multiple APIs.</li>
-        <li>Contributed to feature branch development, code reviews, and sprint planning to ensure timely delivery of project milestones.</li>
+        <li>Selected through a competitive application-based fellowship as a financial literacy educator with FitMoney, teaching an 8-module curriculum on budgeting, credit, investing, and compound interest to 200+ low-income and first-generation high school students across Greater Boston.</li>
+        <li>Coordinated with teachers and community partners to deliver accessible programming, fostering long-term financial skills.</li>
+      </ul>
+    </div>
+
+    <div class="experience-entry">
+      <h3>Developer – Trovr</h3>
+      <p><em>Medford, MA | June 2025 – Present</em></p>
+      <ul>
+        <li>Conducted empathy mapping workshops to translate user pain points and behaviors into actionable design insights, ensuring product decisions were grounded in user needs and enhancing overall usability.</li>
+        <li>Developed Trovr features using Lovable's rapid prototyping tools, collaborating with the team to create MVPs aligned with user requirements.</li>
       </ul>
     </div>
 
     <div class="experience-entry">
       <h3>Data Science Intern – LeadUp Universe</h3>
-      <p><em>2025</em></p>
+      <p><em>Gurugram, New Delhi | June 2025 – July 2025</em></p>
       <ul>
         <li>Spearheaded a strategic data initiative leveraging a 40,000-entry lead dataset to identify growth opportunities across geographic markets.</li>
         <li>Designed and executed a full data pipeline, which involved cleaning and standardizing data using Python and Excel for analytical accuracy.</li>
@@ -106,7 +128,7 @@
 
     <div class="experience-entry">
       <h3>Crew Member – McDonald's, Singapore</h3>
-      <p><em>May 2021 – Aug 2021</em></p>
+      <p><em>Singapore | May 2021 – August 2021</em></p>
       <ul>
         <li>Provided guidance to customers in adhering to Covid/SafeEntry rules and regulations</li>
         <li>Maintained and upheld cleanliness standards of the restaurant (e.g. table sanitation, trash removal, mopping, etc.)</li>
@@ -121,13 +143,30 @@
     <div class="projects-grid">
       <div class="project-card">
         <div class="project-content">
+          <h3>FitWise</h3>
+          <p>
+            Developed an AI-powered virtual fitness trainer providing real-time form correction, rep counting, and motivational audio feedback 
+            using computer vision and AI at HackHarvard. Implemented pose detection via Google's MediaPipe and integrated Gemini API for 
+            intelligent motion analysis. Built a dual-process Python backend using Flask-SocketIO with a Next.js frontend featuring live skeleton overlay.
+          </p>
+          <div class="project-links">
+            <a href="https://github.com/JoshuaGuirao/fitwise" target="_blank" rel="noopener noreferrer">GitHub →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-content">
           <h3>Marketing Analysis</h3>
           <p>
-            Analyzed lead data using Python libraries and Microsoft Excel to determine target demographics for future LeadUp Universe course marketing campaigns<br>
-            <a href="LeadsAnalysisPresentation.pptx">Presentation</a>
-            |
-            <a href="https://github.com/JoshuaGuirao/marketing-analysis" target="_blank" rel="noopener noreferrer">Github</a>
+            Analyzed lead data using Python libraries and Microsoft Excel to determine target demographics for future LeadUp Universe course 
+            marketing campaigns. Performed comprehensive data cleaning, visualization, and statistical analysis to identify high-conversion 
+            customer segments and inform strategic marketing decisions.
           </p>
+          <div class="project-links">
+            <a href="LeadsAnalysisPresentation.pptx">Presentation →</a>
+            <a href="https://github.com/JoshuaGuirao/marketing-analysis" target="_blank" rel="noopener noreferrer">GitHub →</a>
+          </div>
         </div>
       </div>
     </div>
@@ -141,7 +180,7 @@
       |
       <a href="mailto:joshuaguirao24@gmail.com">Email</a>
     </p>
-    <p>&copy; 2025 Joshua Guirao | All Rights Reserved</p>
+    <p style="margin-top: 1rem; color: var(--text-secondary);">&copy; 2025 Joshua Guirao | All Rights Reserved</p>
   </footer>
 
   <script src="script.js"></script>
