@@ -23,6 +23,40 @@ function rotateRole() {
 // Start role rotation
 setInterval(rotateRole, 2500);
 
+// View Portfolio button functionality
+const viewPortfolioBtn = document.getElementById('viewPortfolioBtn');
+const backToHomeBtn = document.getElementById('backToHomeBtn');
+const landingPage = document.querySelector('.landing-page');
+const portfolio = document.getElementById('portfolio');
+
+if (viewPortfolioBtn) {
+  viewPortfolioBtn.addEventListener('click', () => {
+    // Fade out landing page
+    landingPage.classList.add('fade-out');
+    
+    // After fade out completes, fade in portfolio
+    setTimeout(() => {
+      portfolio.classList.add('fade-in');
+      window.scrollTo(0, 0);
+    }, 1000);
+  });
+}
+
+if (backToHomeBtn) {
+  backToHomeBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    
+    // Fade out portfolio
+    portfolio.classList.remove('fade-in');
+    
+    // After fade out completes, fade in landing page
+    setTimeout(() => {
+      landingPage.classList.remove('fade-out');
+      window.scrollTo(0, 0);
+    }, 1000);
+  });
+}
+
 // Smooth scroll for navigation
 document.querySelectorAll('nav a').forEach(link => {
   link.addEventListener('click', e => {
