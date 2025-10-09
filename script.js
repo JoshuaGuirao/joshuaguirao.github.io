@@ -1,5 +1,5 @@
 // Role rotation animation
-const roles = ['SWE', 'Data Scientist', 'Fullstack Developer', 'Quantitative Trader'];
+const roles = ['SWE', 'Data Scientist', 'Quantitative Trader'];
 let currentRoleIndex = 0;
 
 function rotateRole() {
