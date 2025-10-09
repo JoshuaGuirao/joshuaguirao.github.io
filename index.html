@@ -11,6 +11,40 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .project-tag {
+      display: inline-block;
+      padding: 0.35rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .tag-category {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+    }
+
+    .tag-tech {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1.5px solid rgba(255, 255, 255, 0.2);
+      color: var(--text-primary);
+    }
+
+    .project-tag:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+  </style>
 </head>
 <body>
 
@@ -100,7 +134,7 @@
         </div>
 
         <div class="skill-category">
-          <h3>Softwares</h3>
+          <h3>Software</h3>
           <p>Google Apps, Microsoft Suite, VS Code, Apache NetBeans, JupyterLab, GitHub</p>
         </div>
 
@@ -182,13 +216,22 @@
         <div class="project-card">
           <div class="project-content">
             <h3>FitWise</h3>
+            <div class="project-tags">
+              <span class="project-tag tag-category">Full-Stack Development</span>
+              <span class="project-tag tag-category">AI/ML</span>
+              <span class="project-tag tag-tech">Python</span>
+              <span class="project-tag tag-tech">Flask</span>
+              <span class="project-tag tag-tech">Next.js</span>
+              <span class="project-tag tag-tech">MediaPipe</span>
+              <span class="project-tag tag-tech">Gemini API</span>
+            </div>
             <p>
               Developed an AI-powered virtual fitness trainer providing real-time form correction, rep counting, and motivational audio feedback 
               using computer vision and AI at HackHarvard. Implemented pose detection via Google's MediaPipe and integrated Gemini API for 
               intelligent motion analysis. Built a dual-process Python backend using Flask-SocketIO with a Next.js frontend featuring live skeleton overlay.
             </p>
             <div class="project-links">
-              <a href="https://github.com/JoshuaGuirao/fitwise" target="_blank" rel="noopener noreferrer">GitHub →</a>
+              <a href="https://github.com/kubsgok/FitWise" target="_blank" rel="noopener noreferrer">GitHub →</a>
             </div>
           </div>
         </div>
@@ -196,6 +239,14 @@
         <div class="project-card">
           <div class="project-content">
             <h3>Marketing Analysis</h3>
+            <div class="project-tags">
+              <span class="project-tag tag-category">Data Science</span>
+              <span class="project-tag tag-category">Analytics</span>
+              <span class="project-tag tag-tech">Python</span>
+              <span class="project-tag tag-tech">Pandas</span>
+              <span class="project-tag tag-tech">Matplotlib</span>
+              <span class="project-tag tag-tech">Excel</span>
+            </div>
             <p>
               Analyzed lead data using Python libraries and Microsoft Excel to determine target demographics for future LeadUp Universe course 
               marketing campaigns. Performed comprehensive data cleaning, visualization, and statistical analysis to identify high-conversion 
