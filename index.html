@@ -11,41 +11,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css" />
-  <style>
-    .project-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-top: 1rem;
-      margin-bottom: 1rem;
-    }
-
-    .project-tag {
-      display: inline-block;
-      padding: 0.35rem 0.75rem;
-      border-radius: 20px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      transition: all 0.3s ease;
-    }
-
-    .tag-category {
-      background: rgba(0, 180, 216, 0.2);
-      border: 1.5px solid var(--primary);
-      color: var(--primary);
-    }
-
-    .tag-tech {
-      background: rgba(0, 180, 216, 0.15);
-      border: 1.5px solid rgba(0, 180, 216, 0.4);
-      color: var(--accent);
-    }
-
-    .project-tag:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    }
-  </style>
 </head>
 <body>
 
@@ -62,7 +27,7 @@
     <div class="landing-content">
       <div class="profile-container">
         <div class="profile-image">
-          <img src="joshuaimage.png" alt="Joshua Guirao" />
+          <img src="your-photo.jpg" alt="Joshua Guirao" />
           <div class="image-glow"></div>
         </div>
       </div>
@@ -83,6 +48,7 @@
     <header>
       <h1>Joshua Guirao</h1>
       <p>
+        Coder ● Data Analyst ● Problem Solver<br>
         Computer Science & Quantitative Economics @ Tufts University<br>
         Singapore, Singapore | Medford, MA
       </p>
@@ -100,30 +66,23 @@
     <section id="about">
       <h2>About Me</h2>
       <p>
-        I'm an aspiring Software Engineer and Data Scientist currently pursuing a dual degree in Computer Science and Quantitative Economics at 
-        Tufts University, with a minor in Mathematics. My journey in tech is driven by a deep-rooted passion for transforming complex problems into 
-        elegant, data-driven solutions.
+        I'm an aspiring Software Engineer and Data Scientist currently pursuing a dual degree in Computer Science and Quantitative Economics at Tufts University, with a minor in Mathematics. My journey in tech is driven by a deep-rooted passion for transforming complex problems into elegant, data-driven solutions.
       </p>
       <p style="margin-top: 1.5rem;">
-        At the intersection of code and analytics, I find my creative spark. Whether I'm building full-stack applications, developing machine learning 
-        models, or analyzing datasets to uncover actionable insights, I'm constantly seeking ways to leverage technology and data to create meaningful 
-        impact.
+        At the intersection of code and analytics, I find my creative spark. Whether I'm building full-stack applications that empower nonprofits, developing machine learning models for environmental sustainability, or analyzing datasets to uncover actionable insights, I'm constantly seeking ways to leverage technology and data to create meaningful impact. From crafting AI-powered fitness trainers to designing scalable recycling solutions with hyperspectral imaging, I believe that innovation happens when technical expertise meets real-world challenges.
       </p>
       <p style="margin-top: 1.5rem;">
-        My passion extends into the world of finance, where I apply quantitative methods and algorithmic thinking to decode market patterns and 
-        trading strategies. I'm fascinated by the convergence of technology and finance—whether it's developing quantitative trading algorithms or 
-        building tools that make financial education accessible to underserved communities.
+        My passion extends into the world of finance, where I apply quantitative methods and algorithmic thinking to decode market patterns and trading strategies. As an Analyst at Tufts Trading Club, I combine probability theory with Python scripting to model trading scenarios and optimize performance. Through my work as a FitMoney Fellow, I'm dedicated to democratizing financial literacy, teaching over 200 students about budgeting, investing, and compound interest. I'm fascinated by the convergence of technology and finance—whether it's developing quantitative trading algorithms or building tools that make financial education accessible to underserved communities.
       </p>
       <p style="margin-top: 1.5rem;">
-        Beyond the screen, I'm always eager to collaborate on projects that blend creativity, analytical thinking, and social good. 
-        Let's build something innovative together.
+        Beyond the screen, I'm always eager to collaborate on projects that blend creativity, analytical thinking, and social good. Let's build something innovative together.
       </p>
     </section>
 
     <section id="resume">
       <h2>Resume</h2>
       <p>Download my complete resume to learn more about my background and experience</p>
-      <a href="Joshua Guirao Resume.pdf" download class="btn">Download Resume</a>
+      <a href="Joshua Guirao - Resume.pdf" download class="btn">Download Resume</a>
     </section>
 
     <section id="skills">
@@ -135,7 +94,7 @@
         </div>
 
         <div class="skill-category">
-          <h3>Software</h3>
+          <h3>Softwares</h3>
           <p>Google Apps, Microsoft Suite, VS Code, Apache NetBeans, JupyterLab, GitHub</p>
         </div>
 
@@ -217,22 +176,49 @@
         <div class="project-card">
           <div class="project-content">
             <h3>FitWise</h3>
-            <div class="project-tags">
-              <span class="project-tag tag-category">Full-Stack Development</span>
-              <span class="project-tag tag-category">AI/ML</span>
-              <span class="project-tag tag-tech">Python</span>
-              <span class="project-tag tag-tech">Flask</span>
-              <span class="project-tag tag-tech">Next.js</span>
-              <span class="project-tag tag-tech">MediaPipe</span>
-              <span class="project-tag tag-tech">Gemini API</span>
-            </div>
             <p>
               Developed an AI-powered virtual fitness trainer providing real-time form correction, rep counting, and motivational audio feedback 
               using computer vision and AI at HackHarvard. Implemented pose detection via Google's MediaPipe and integrated Gemini API for 
               intelligent motion analysis. Built a dual-process Python backend using Flask-SocketIO with a Next.js frontend featuring live skeleton overlay.
             </p>
             <div class="project-links">
-              <a href="https://github.com/kubsgok/FitWise" target="_blank" rel="noopener noreferrer">GitHub →</a>
+              <a href="https://github.com/JoshuaGuirao/fitwise" target="_blank" rel="noopener noreferrer">GitHub →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-content">
+            <h3>Cinelog</h3>
+            <p>
+              A university marketplace app designed to help students easily share, borrow, and offer resources and services within their campus community. 
+              Built with a full-stack JavaScript architecture using Node.js backend and NoSQL database with MongoDB for scalable data management. 
+              Features a responsive interface that facilitates peer-to-peer transactions and resource sharing among students.
+            </p>
+            <div class="project-links">
+              <a href="https://github.com/kubsgok/cinelog" target="_blank" rel="noopener noreferrer">GitHub →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-content">
+            <h3>Cinelog</h3>
+            <div class="project-tags">
+              <span class="project-tag tag-category">Full-Stack Development</span>
+              <span class="project-tag tag-tech">Node.js</span>
+              <span class="project-tag tag-tech">JavaScript</span>
+              <span class="project-tag tag-tech">MongoDB</span>
+              <span class="project-tag tag-tech">NoSQL</span>
+              <span class="project-tag tag-tech">HTML/CSS</span>
+            </div>
+            <p>
+              A university marketplace app designed to help students easily share, borrow, and offer resources and services within their campus community. 
+              Built with a full-stack JavaScript architecture using Node.js backend and NoSQL database with MongoDB for scalable data management. 
+              Features a responsive interface that facilitates peer-to-peer transactions and resource sharing among students.
+            </p>
+            <div class="project-links">
+              <a href="https://github.com/kubsgok/cinelog" target="_blank" rel="noopener noreferrer">GitHub →</a>
             </div>
           </div>
         </div>
@@ -240,14 +226,6 @@
         <div class="project-card">
           <div class="project-content">
             <h3>Marketing Analysis</h3>
-            <div class="project-tags">
-              <span class="project-tag tag-category">Data Science</span>
-              <span class="project-tag tag-category">Analytics</span>
-              <span class="project-tag tag-tech">Python</span>
-              <span class="project-tag tag-tech">Pandas</span>
-              <span class="project-tag tag-tech">Matplotlib</span>
-              <span class="project-tag tag-tech">Excel</span>
-            </div>
             <p>
               Analyzed lead data using Python libraries and Microsoft Excel to determine target demographics for future LeadUp Universe course 
               marketing campaigns. Performed comprehensive data cleaning, visualization, and statistical analysis to identify high-conversion 
