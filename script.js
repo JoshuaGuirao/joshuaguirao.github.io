@@ -61,7 +61,9 @@ if (backToHomeBtn) {
 document.querySelectorAll('nav a').forEach(link => {
   link.addEventListener('click', e => {
     e.preventDefault();
-    const target = document.querySelector(link.getAttribute('href'));
+    const href = link.getAttribute('href');
+    if (href.length <= 1) return; // "Home" is handled by backToHomeBtn
+    const target = document.querySelector(href);
     if (target) {
       target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
@@ -121,6 +123,40 @@ window.addEventListener('scroll', () => {
     header.style.opacity = 1 - scrolled / 500;
   }
 });
+
+// Collapsible experience entries
+document.querySelectorAll('.experience-entry').forEach(entry => {
+  const toggle = entry.querySelector('.exp-toggle');
+  if (!toggle) return;
+  const label = toggle.querySelector('.toggle-label');
+
+  const sync = () => {
+    const collapsed = entry.classList.contains('collapsed');
+    toggle.setAttribute('aria-expanded', String(!collapsed));
+    if (label) label.textContent = collapsed ? 'Show details' : 'Hide details';
+  };
+
+  sync();
+  toggle.addEventListener('click', () => {
+    entry.classList.toggle('collapsed');
+    sync();
+  });
+});
+
+// Live clocks in the footer (Boston and Singapore)
+function updateClocks() {
+  const now = new Date();
+  const format = timeZone =>
+    new Intl.DateTimeFormat('en-GB', { hour: '2-digit', minute: '2-digit', hour12: false, timeZone }).format(now);
+
+  const bos = document.getElementById('clockBos');
+  const sgp = document.getElementById('clockSgp');
+  if (bos) bos.textContent = format('America/New_York');
+  if (sgp) sgp.textContent = format('Asia/Singapore');
+}
+
+updateClocks();
+setInterval(updateClocks, 10000);
 
 // Randomize background particle positions
 document.addEventListener('DOMContentLoaded', () => {
