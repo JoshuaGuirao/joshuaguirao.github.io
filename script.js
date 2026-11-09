@@ -1,5 +1,5 @@
 // Role rotation animation
-const roles = ['Software Engineer', 'Data Engineer', 'Quant Trader'];
+const roles = ['Software Engineer', 'Data Scientist'];
 let currentRoleIndex = 0;
 function rotateRole() {
   const roleText = document.querySelector('.role-text');
