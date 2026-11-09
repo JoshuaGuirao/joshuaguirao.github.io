@@ -1,35 +1,39 @@
 // Role rotation animation
 const roles = ['Software Engineer', 'Data Scientist'];
 let currentRoleIndex = 0;
+
 function rotateRole() {
   const roleText = document.querySelector('.role-text');
   if (roleText) {
     // Fade out
     roleText.style.opacity = '0';
     roleText.style.transform = 'translateY(-10px)';
-    
+
     setTimeout(() => {
       currentRoleIndex = (currentRoleIndex + 1) % roles.length;
       roleText.textContent = roles[currentRoleIndex];
-      
+
       // Fade in
       roleText.style.opacity = '1';
       roleText.style.transform = 'translateY(0)';
     }, 300);
   }
 }
+
 // Start role rotation
 setInterval(rotateRole, 2500);
+
 // View Portfolio button functionality
 const viewPortfolioBtn = document.getElementById('viewPortfolioBtn');
 const backToHomeBtn = document.getElementById('backToHomeBtn');
 const landingPage = document.querySelector('.landing-page');
 const portfolio = document.getElementById('portfolio');
+
 if (viewPortfolioBtn) {
   viewPortfolioBtn.addEventListener('click', () => {
     // Fade out landing page
     landingPage.classList.add('fade-out');
-    
+
     // After fade out completes, fade in portfolio
     setTimeout(() => {
       portfolio.classList.add('fade-in');
@@ -37,13 +41,14 @@ if (viewPortfolioBtn) {
     }, 1000);
   });
 }
+
 if (backToHomeBtn) {
   backToHomeBtn.addEventListener('click', (e) => {
     e.preventDefault();
-    
+
     // Fade out portfolio
     portfolio.classList.remove('fade-in');
-    
+
     // After fade out completes, fade in landing page
     setTimeout(() => {
       landingPage.classList.remove('fade-out');
@@ -51,6 +56,7 @@ if (backToHomeBtn) {
     }, 1000);
   });
 }
+
 // Smooth scroll for navigation
 document.querySelectorAll('nav a').forEach(link => {
   link.addEventListener('click', e => {
@@ -61,11 +67,13 @@ document.querySelectorAll('nav a').forEach(link => {
     }
   });
 });
+
 // Intersection Observer for fade-in animations
 const observerOptions = {
   threshold: 0.2,
   rootMargin: '0px 0px -100px 0px'
 };
+
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -74,6 +82,7 @@ const observer = new IntersectionObserver((entries) => {
     }
   });
 }, observerOptions);
+
 // Observe all sections except the landing page
 document.querySelectorAll('#portfolio section').forEach(section => {
   section.style.opacity = '0';
@@ -81,19 +90,20 @@ document.querySelectorAll('#portfolio section').forEach(section => {
   section.style.transition = 'all 0.8s ease';
   observer.observe(section);
 });
+
 // Add active state to nav links on scroll
 window.addEventListener('scroll', () => {
   const sections = document.querySelectorAll('#portfolio section');
   const navLinks = document.querySelectorAll('nav a');
-  
+
   let current = '';
   sections.forEach(section => {
     const sectionTop = section.offsetTop;
-    const sectionHeight = section.clientHeight;
     if (scrollY >= sectionTop - 200) {
       current = section.getAttribute('id');
     }
   });
+
   navLinks.forEach(link => {
     link.style.color = '';
     if (link.getAttribute('href').slice(1) === current) {
@@ -101,6 +111,7 @@ window.addEventListener('scroll', () => {
     }
   });
 });
+
 // Parallax effect for header
 window.addEventListener('scroll', () => {
   const header = document.querySelector('header');
@@ -110,11 +121,11 @@ window.addEventListener('scroll', () => {
     header.style.opacity = 1 - scrolled / 500;
   }
 });
-// Add floating animation to background particles
+
+// Randomize background particle positions
 document.addEventListener('DOMContentLoaded', () => {
   const particles = document.querySelectorAll('.bg-animation span');
-  particles.forEach((particle, index) => {
-    const randomX = Math.random() * 100;
-    particle.style.left = randomX + '%';
+  particles.forEach(particle => {
+    particle.style.left = Math.random() * 100 + '%';
   });
 });
