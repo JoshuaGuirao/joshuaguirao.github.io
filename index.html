@@ -4,740 +4,400 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Portfolio of Joshua Guirao - Computer Science & Mathematics Student at Tufts University" />
+  <meta name="theme-color" content="#0F1622" />
   <title>Joshua Guirao | Portfolio</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css" />
-  <style>
-    /* ---------- Project tags ---------- */
-    .project-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-top: 1rem;
-      margin-bottom: 1rem;
-    }
-
-    .project-tag {
-      display: inline-block;
-      padding: 0.35rem 0.75rem;
-      border-radius: 20px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      transition: all 0.3s ease;
-    }
-
-    .tag-category {
-      background: rgba(0, 180, 216, 0.2);
-      border: 1.5px solid var(--primary);
-      color: var(--primary);
-    }
-
-    .tag-tech {
-      background: rgba(0, 180, 216, 0.15);
-      border: 1.5px solid rgba(0, 180, 216, 0.4);
-      color: var(--accent);
-    }
-
-    .project-tag:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    }
-
-    /* ---------- Education ---------- */
-    .education-card {
-      background: var(--card-bg);
-      padding: 2.5rem;
-      border-radius: 16px;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-      border: 1px solid rgba(0, 180, 216, 0.1);
-      transition: all 0.4s ease;
-    }
-
-    .education-card:hover {
-      box-shadow: 0 16px 48px rgba(0, 180, 216, 0.2);
-      border-color: rgba(0, 180, 216, 0.3);
-    }
-
-    .education-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      flex-wrap: wrap;
-      gap: 0.75rem 2rem;
-    }
-
-    .education-header h3 {
-      color: var(--primary);
-      font-size: 1.5rem;
-      font-weight: 700;
-      margin-bottom: 0.4rem;
-    }
-
-    .education-degree {
-      color: var(--text);
-      font-weight: 500;
-    }
-
-    .education-meta {
-      color: var(--text-secondary);
-    }
-
-    .coursework-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      margin-top: 2.25rem;
-      padding-top: 2rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    .coursework-group h4 {
-      color: var(--accent);
-      font-size: 0.8rem;
-      font-weight: 700;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      margin-bottom: 1rem;
-    }
-
-    .course-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-
-    .course-tag {
-      padding: 0.4rem 0.8rem;
-      border-radius: 20px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      background: rgba(0, 180, 216, 0.12);
-      border: 1.5px solid rgba(0, 180, 216, 0.35);
-      color: var(--text);
-    }
-
-    /* ---------- Collapsible experience ---------- */
-    .exp-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 1rem;
-    }
-
-    .experience-entry .exp-header p {
-      margin-bottom: 0;
-    }
-
-    .exp-toggle {
-      flex-shrink: 0;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      background: rgba(0, 180, 216, 0.1);
-      border: 1px solid rgba(0, 180, 216, 0.35);
-      color: var(--accent);
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.8rem;
-      font-weight: 600;
-      padding: 0.4rem 0.9rem;
-      border-radius: 20px;
-      cursor: pointer;
-      white-space: nowrap;
-      transition: all 0.3s ease;
-    }
-
-    .exp-toggle:hover {
-      background: rgba(0, 180, 216, 0.2);
-      border-color: var(--primary);
-      color: var(--primary);
-    }
-
-    .exp-toggle .chevron {
-      display: inline-block;
-      transition: transform 0.3s ease;
-    }
-
-    .experience-entry:not(.collapsed) .exp-toggle .chevron {
-      transform: rotate(180deg);
-    }
-
-    .exp-details {
-      display: grid;
-      grid-template-rows: 1fr;
-      transition: grid-template-rows 0.4s ease;
-    }
-
-    .experience-entry.collapsed .exp-details {
-      grid-template-rows: 0fr;
-    }
-
-    .exp-details-inner {
-      overflow: hidden;
-      min-height: 0;
-    }
-
-    .exp-details-inner ul {
-      padding-top: 1rem;
-    }
-
-    /* ---------- Footer ---------- */
-    footer.site-footer {
-      text-align: left;
-      padding: 6rem 2rem 0;
-    }
-
-    .footer-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: end;
-      padding-bottom: 5rem;
-    }
-
-    .footer-cta {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: clamp(2.5rem, 5vw, 4rem);
-      font-weight: 700;
-      line-height: 1.1;
-      color: var(--text);
-    }
-
-    .footer-cta span {
-      display: block;
-      background: var(--gradient-2);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .footer-cta-sub {
-      color: var(--text-secondary);
-      margin-top: 1.5rem;
-      max-width: 420px;
-      line-height: 1.7;
-    }
-
-    .contact-list {
-      list-style: none;
-    }
-
-    .contact-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1.4rem 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      text-decoration: none;
-    }
-
-    footer.site-footer a.contact-row {
-      margin: 0;
-    }
-
-    .contact-label {
-      display: block;
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--text-secondary);
-      opacity: 0.75;
-      margin-bottom: 0.35rem;
-    }
-
-    .contact-value {
-      font-size: 1.1rem;
-      color: var(--text);
-      transition: color 0.3s ease;
-    }
-
-    .contact-arrow {
-      font-size: 1.3rem;
-      color: var(--text-secondary);
-      transition: transform 0.3s ease, color 0.3s ease;
-    }
-
-    a.contact-row:hover .contact-value,
-    a.contact-row:hover .contact-arrow {
-      color: var(--primary);
-    }
-
-    a.contact-row:hover .contact-arrow {
-      transform: translate(3px, -3px);
-    }
-
-    .footer-bottom-wrap {
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-      margin: 0 -2rem;
-      padding: 0 2rem;
-    }
-
-    .footer-bottom {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 1.75rem 0;
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 1rem;
-      font-size: 0.75rem;
-      font-weight: 500;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--text-secondary);
-    }
-
-    .clock-time {
-      color: var(--primary);
-      font-weight: 700;
-      font-variant-numeric: tabular-nums;
-    }
-
-    @media (max-width: 768px) {
-      .footer-inner {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-        padding-bottom: 3.5rem;
-      }
-
-      .exp-header {
-        flex-wrap: wrap;
-      }
-
-      .education-card {
-        padding: 2rem;
-      }
-    }
-  </style>
 </head>
-<body>
+<body class="landing-open">
 
-  <div class="bg-animation">
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
+  <!-- Animated background -->
+  <canvas id="field" aria-hidden="true"></canvas>
+  <div class="field-veil" aria-hidden="true"></div>
 
   <!-- Landing Page -->
-  <section id="home" class="landing-page">
+  <section id="home" class="landing-page" aria-label="Introduction">
     <div class="landing-content">
-      <div class="profile-container">
-        <div class="profile-image">
-          <img src="joshuaimage.png" alt="Joshua Guirao" />
-          <div class="image-glow"></div>
-        </div>
+      <div class="profile-image">
+        <img src="joshuaimage.png" alt="Joshua Guirao" />
       </div>
       <h1 class="landing-title">Joshua Guirao</h1>
-      <p class="landing-subtitle">
-        <span class="role-text">Software Engineer</span>
+      <p class="landing-subtitle" aria-label="Software Engineer and Data Scientist">
+        <span aria-hidden="true"><span class="prompt">&gt;</span><span class="role-text">Software Engineer</span><span class="caret"></span></span>
       </p>
-      <p class="landing-location">Computer Science & Mathematics @ Tufts University</p>
-      <button class="explore-btn" id="viewPortfolioBtn">
-        View My Portfolio
-        <span class="arrow">→</span>
-      </button>
+      <p class="landing-location">Computer Science &amp; Mathematics at Tufts University</p>
+      <div class="landing-actions">
+        <button class="btn btn-primary" id="viewPortfolioBtn" type="button">View portfolio</button>
+        <a class="btn btn-ghost" href="Joshua Guirao - Resume - S.pdf" download>Download resume</a>
+      </div>
     </div>
   </section>
 
   <!-- Portfolio Content -->
   <div id="portfolio">
-    <header>
-      <h1>Joshua Guirao</h1>
-      <p>
-        Computer Science & Mathematics @ Tufts University<br>
-        Singapore, Singapore | Medford, MA
-      </p>
-    </header>
-
-    <nav>
-      <a href="#" id="backToHomeBtn">Home</a>
-      <a href="#about">About</a>
-      <a href="#education">Education</a>
-      <a href="#resume">Resume</a>
-      <a href="#skills">Skills</a>
-      <a href="#experience">Experience</a>
-      <a href="#projects">Projects</a>
+    <nav class="site-nav" aria-label="Sections">
+      <div class="nav-inner">
+        <a href="#" id="backToHomeBtn" class="nav-name">Joshua Guirao</a>
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#education">Education</a>
+          <a href="#resume">Resume</a>
+          <a href="#skills">Skills</a>
+          <a href="#experience">Experience</a>
+          <a href="#projects">Projects</a>
+        </div>
+      </div>
     </nav>
 
-    <section id="about">
-      <h2>About Me</h2>
-      <p>
-        I'm an aspiring Software Engineer and Data Scientist pursuing a dual degree in Computer Science and Mathematics
-        at Tufts University, with a minor in AI Development. I'm drawn to problems where solid engineering and rigorous
-        math meet, and I enjoy turning messy, complex problems into systems that are clean, reliable, and useful.
-      </p>
-      <p style="margin-top: 1.5rem;">
-        I've worked with technology from two sides: building it and evaluating it. On the building side, I've developed a
-        real-time computer vision fitness trainer that runs pose inference alongside a live web frontend, integrated and
-        stress-tested social media APIs for a production analytics platform, and engineered data pipelines that turn tens of
-        thousands of inconsistent records into analysis-ready datasets. On the evaluating side, I worked on PE-backed software
-        M&A deals at EY-Parthenon, digging into target companies' products and tech stacks to understand how they were built
-        and what made them valuable. Together, those experiences taught me to ask not just whether a system works, but why it
-        was designed that way and what it's worth to the people who rely on it.
-      </p>
-      <p style="margin-top: 1.5rem;">
-        My approach sits where software engineering and data science overlap. I start by decomposing a problem into
-        well-scoped components with clear inputs, outputs, and interfaces, whether that's isolating real-time model inference
-        from a web server in separate processes or splitting a messy dataset into cleaning, normalization, and fuzzy-matching
-        stages. Each component gets built, tested, and tuned in isolation, then composed back into a single pipeline. Working at
-        that level of granularity makes failures easier to trace and tradeoffs easier to measure, and the system that comes
-        out the other end is more robust than anything I could have designed as one monolithic piece.
-      </p>
-      <p style="margin-top: 1.5rem;">
-        Outside of code, I'm usually lifting, playing chess or piano, cooking Asian food, or following the Toronto Raptors.
-      </p>
-      <p style="margin-top: 1.5rem;">
-        I'm looking for opportunities in software engineering, data science, and machine learning where I can keep building,
-        keep learning from people who push me, and work on problems that matter. If that sounds like something you're working
-        on, I'd love to connect.
-      </p>
-    </section>
-
-    <section id="education">
-      <h2>Education</h2>
-      <div class="education-card">
-        <div class="education-header">
-          <div>
-            <h3>Tufts University</h3>
-            <p class="education-degree">BSE in Computer Science · BS in Mathematics · Minor in AI Development</p>
-          </div>
-          <p class="education-meta"><em>Medford, MA | September 2024 – May 2028</em></p>
+    <main>
+      <section id="about" class="section">
+        <h2 class="section-title">About</h2>
+        <div class="section-body about-body">
+          <p class="about-lead">
+            I'm studying Computer Science and Mathematics at Tufts University, with a minor in AI Development.
+            I'm drawn to problems where solid engineering meets rigorous math, and I like turning messy, complex
+            problems into systems that are clean and reliable.
+          </p>
+          <p>
+            I've built a real-time computer vision fitness trainer, hardened API integrations for a production
+            analytics platform, and engineered pipelines that turn tens of thousands of messy records into
+            analysis-ready data. At EY-Parthenon, I evaluated software companies' products and tech stacks on
+            PE-backed M&amp;A deals, which taught me to ask not only whether a system works, but why it was built
+            that way and what it's worth.
+          </p>
+          <p>
+            I work by breaking a problem into well-scoped components with clear interfaces, building and testing
+            each one in isolation, then composing them back into a single system that's easier to debug and more
+            robust than a monolith.
+          </p>
+          <p class="about-aside">
+            Outside of code, I'm usually lifting, playing chess or piano, cooking Asian food, or following the Toronto Raptors.
+          </p>
         </div>
+      </section>
 
-        <div class="coursework-grid">
-          <div class="coursework-group">
-            <h4>Software Engineering</h4>
-            <div class="course-tags">
-              <span class="course-tag">Data Structures</span>
-              <span class="course-tag">Algorithms</span>
-              <span class="course-tag">Software Engineering</span>
-              <span class="course-tag">Machine Structure & Assembly-Language Programming</span>
-              <span class="course-tag">Web Programming</span>
-              <span class="course-tag">Discrete Mathematics</span>
+      <section id="education" class="section">
+        <h2 class="section-title">Education</h2>
+        <div class="section-body">
+          <div class="edu-head">
+            <div>
+              <h3>Tufts University</h3>
+              <p class="edu-degree">BSE in Computer Science, BS in Mathematics<br>Minor in AI Development</p>
             </div>
+            <p class="edu-meta">Sep 2024 – May 2028<br>Medford, MA</p>
           </div>
 
-          <div class="coursework-group">
-            <h4>Data Science & Machine Learning</h4>
-            <div class="course-tags">
-              <span class="course-tag">Intro to Machine Learning & Data Mining</span>
-              <span class="course-tag">Artificial Intelligence</span>
-              <span class="course-tag">Probability</span>
-              <span class="course-tag">Statistics</span>
-              <span class="course-tag">Linear Algebra</span>
-              <span class="course-tag">Calculus III</span>
+          <div class="coursework">
+            <div>
+              <h4>Software engineering coursework</h4>
+              <ul class="chips">
+                <li class="chip">Data Structures</li>
+                <li class="chip">Algorithms</li>
+                <li class="chip">Software Engineering</li>
+                <li class="chip">Machine Structure &amp; Assembly-Language Programming</li>
+                <li class="chip">Web Programming</li>
+                <li class="chip">Discrete Mathematics</li>
+              </ul>
+            </div>
+            <div>
+              <h4>Data science &amp; ML coursework</h4>
+              <ul class="chips">
+                <li class="chip">Intro to Machine Learning &amp; Data Mining</li>
+                <li class="chip">Artificial Intelligence</li>
+                <li class="chip">Probability</li>
+                <li class="chip">Statistics</li>
+                <li class="chip">Linear Algebra</li>
+                <li class="chip">Calculus III</li>
+              </ul>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="resume">
-      <h2>Resume</h2>
-      <p>Download my complete resume to learn more about my background and experience</p>
-      <a href="Joshua Guirao - Resume - S.pdf" download class="btn">Download Resume</a>
-    </section>
-
-    <section id="skills">
-      <h2>Skills</h2>
-      <div class="skills-container">
-        <div class="skill-category">
-          <h3>Programming Languages</h3>
-          <p>Python, Java, C++, SQL, JavaScript, TypeScript, PHP, HTML/CSS, VPython</p>
+      <section id="resume" class="section">
+        <h2 class="section-title">Resume</h2>
+        <div class="section-body resume-body">
+          <p>The full one-page version of my background, experience and projects.</p>
+          <a href="Joshua Guirao - Resume - S.pdf" download class="btn btn-primary">Download resume (PDF)</a>
         </div>
+      </section>
 
-        <div class="skill-category">
-          <h3>Frameworks & Tools</h3>
-          <p>React, Next.js, Node.js, Express, Flask, PostgreSQL, Prisma, MongoDB, Git</p>
-        </div>
-
-        <div class="skill-category">
-          <h3>Data Science & ML</h3>
-          <p>Pandas, NumPy, Matplotlib, TensorFlow, MediaPipe, JupyterLab, rapidfuzz, Excel</p>
-        </div>
-
-        <div class="skill-category">
-          <h3>AI-Native Tools</h3>
-          <p>Claude Code, ChatGPT, Gemini API, ElevenLabs, Lovable, GitHub</p>
-        </div>
-
-        <div class="skill-category">
-          <h3>Software</h3>
-          <p>Google Apps, Microsoft Suite, VS Code, Apache NetBeans</p>
-        </div>
-
-        <div class="skill-category">
-          <h3>Spoken Languages</h3>
-          <p>English (Fluent), Chinese (Intermediate), Filipino (Elementary)</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="experience">
-      <h2>Experience</h2>
-
-      <!-- Current roles (newest first) -->
-      <div class="experience-entry collapsed">
-        <div class="exp-header">
-          <div>
-            <h3>General Chemistry II Laboratory Teaching Assistant – Tufts University</h3>
-            <p><em>Medford, MA | September 2026 – Present</em></p>
+      <section id="skills" class="section">
+        <h2 class="section-title">Skills</h2>
+        <div class="section-body skill-rows">
+          <div class="skill-row">
+            <h3>Programming languages</h3>
+            <ul class="chips">
+              <li class="chip">Python</li><li class="chip">Java</li><li class="chip">C++</li><li class="chip">SQL</li>
+              <li class="chip">JavaScript</li><li class="chip">TypeScript</li><li class="chip">PHP</li>
+              <li class="chip">HTML/CSS</li><li class="chip">VPython</li>
+            </ul>
           </div>
-          <button class="exp-toggle" type="button"><span class="toggle-label">Show details</span><span class="chevron">▾</span></button>
-        </div>
-        <div class="exp-details">
-          <div class="exp-details-inner">
-            <ul>
-              <li>Oversee student safety and proper lab conduct during sessions, provide guidance on experimental procedures and the underlying chemistry theory, and grade lab data submissions.</li>
+          <div class="skill-row">
+            <h3>Frameworks &amp; tools</h3>
+            <ul class="chips">
+              <li class="chip">React</li><li class="chip">Next.js</li><li class="chip">Node.js</li><li class="chip">Express</li>
+              <li class="chip">Flask</li><li class="chip">PostgreSQL</li><li class="chip">Prisma</li><li class="chip">MongoDB</li>
+              <li class="chip">Git</li>
+            </ul>
+          </div>
+          <div class="skill-row">
+            <h3>Data science &amp; ML</h3>
+            <ul class="chips">
+              <li class="chip">Pandas</li><li class="chip">NumPy</li><li class="chip">Matplotlib</li><li class="chip">TensorFlow</li>
+              <li class="chip">MediaPipe</li><li class="chip">JupyterLab</li><li class="chip">rapidfuzz</li><li class="chip">Excel</li>
+            </ul>
+          </div>
+          <div class="skill-row">
+            <h3>AI-native tools</h3>
+            <ul class="chips">
+              <li class="chip">Claude Code</li><li class="chip">ChatGPT</li><li class="chip">Gemini API</li>
+              <li class="chip">ElevenLabs</li><li class="chip">Lovable</li><li class="chip">GitHub</li>
+            </ul>
+          </div>
+          <div class="skill-row">
+            <h3>Software</h3>
+            <ul class="chips">
+              <li class="chip">Google Apps</li><li class="chip">Microsoft Suite</li><li class="chip">VS Code</li>
+              <li class="chip">Apache NetBeans</li>
+            </ul>
+          </div>
+          <div class="skill-row">
+            <h3>Spoken languages</h3>
+            <ul class="chips">
+              <li class="chip">English (Fluent)</li><li class="chip">Chinese (Intermediate)</li><li class="chip">Filipino (Elementary)</li>
             </ul>
           </div>
         </div>
-      </div>
+      </section>
 
-      <div class="experience-entry">
-        <div class="exp-header">
-          <div>
-            <h3>Executive Director of Operations – FitMoney</h3>
-            <p><em>Medford, MA | December 2025 – Present (Fellow, September 2025 – December 2025)</em></p>
-          </div>
-          <button class="exp-toggle" type="button"><span class="toggle-label">Hide details</span><span class="chevron">▾</span></button>
-        </div>
-        <div class="exp-details">
-          <div class="exp-details-inner">
-            <ul>
-              <li>Directing operations of a 30+ member organization, coordinating cross-team logistics and curriculum delivery for an 8-module financial literacy program reaching 200+ low-income and first-generation high school students.</li>
-              <li>Previously taught the program's curriculum on budgeting, credit, investing, and compound interest as a Fellow, coordinating with teachers and community partners across Greater Boston.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
+      <section id="experience" class="section">
+        <h2 class="section-title">Experience</h2>
+        <div class="section-body">
+          <!-- Always visible: the first roles in order -->
+          <div class="roles">
+            <article class="role">
+              <div class="role-head">
+                <div>
+                  <h3 class="role-title">General Chemistry II Laboratory Teaching Assistant</h3>
+                  <p class="role-org">Tufts University</p>
+                </div>
+                <p class="role-meta"><span>Sep 2026 – Present</span><span>Medford, MA</span></p>
+              </div>
+              <ul class="role-points">
+                <li>Oversee student safety and proper lab conduct during sessions, provide guidance on experimental procedures and the underlying chemistry theory, and grade lab data submissions.</li>
+              </ul>
+            </article>
 
-      <div class="experience-entry collapsed">
-        <div class="exp-header">
-          <div>
-            <h3>Chair of Professional Development – Ascend Tufts</h3>
-            <p><em>Medford, MA | November 2025 – Present</em></p>
-          </div>
-          <button class="exp-toggle" type="button"><span class="toggle-label">Show details</span><span class="chevron">▾</span></button>
-        </div>
-        <div class="exp-details">
-          <div class="exp-details-inner">
-            <ul>
-              <li>Spearheading professional development through skills workshops and resume reviews to drive career readiness.</li>
-              <li>Coordinate industry outreach to source speakers and networking events, expanding member access to opportunities.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
+            <article class="role">
+              <div class="role-head">
+                <div>
+                  <h3 class="role-title">Executive Director of Operations</h3>
+                  <p class="role-org">FitMoney</p>
+                  <p class="role-note">Previously Fellow, Sep 2025 – Dec 2025</p>
+                </div>
+                <p class="role-meta"><span>Dec 2025 – Present</span><span>Medford, MA</span></p>
+              </div>
+              <ul class="role-points">
+                <li>Directing operations of a 30+ member organization, coordinating cross-team logistics and curriculum delivery for an 8-module financial literacy program reaching 200+ low-income and first-generation high school students.</li>
+                <li>Previously taught the program's curriculum on budgeting, credit, investing, and compound interest as a Fellow, coordinating with teachers and community partners across Greater Boston.</li>
+              </ul>
+            </article>
 
-      <!-- Past roles (newest first) -->
-      <div class="experience-entry">
-        <div class="exp-header">
-          <div>
-            <h3>Strategy and Transactions Intern – EY-Parthenon</h3>
-            <p><em>Singapore | May 2026 – August 2026 | Software Strategy Group</em></p>
-          </div>
-          <button class="exp-toggle" type="button"><span class="toggle-label">Hide details</span><span class="chevron">▾</span></button>
-        </div>
-        <div class="exp-details">
-          <div class="exp-details-inner">
-            <ul>
-              <li>Supported product, technology, and commercial due diligence engagements for PE-backed software M&A transactions, synthesizing client materials and external research into structured analytical frameworks for senior team review.</li>
-              <li>Analyzed publicly available financial statements and conducted competitive product benchmarking across companies to assess growth signals and market positioning, producing research used by active M&A deal teams.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
+            <article class="role">
+              <div class="role-head">
+                <div>
+                  <h3 class="role-title">Chair of Professional Development</h3>
+                  <p class="role-org">Ascend Tufts</p>
+                </div>
+                <p class="role-meta"><span>Nov 2025 – Present</span><span>Medford, MA</span></p>
+              </div>
+              <ul class="role-points">
+                <li>Spearheading professional development through skills workshops and resume reviews to drive career readiness.</li>
+                <li>Coordinate industry outreach to source speakers and networking events, expanding member access to opportunities.</li>
+              </ul>
+            </article>
 
-      <div class="experience-entry collapsed">
-        <div class="exp-header">
-          <div>
-            <h3>Student Consultant – 180 Degrees Consulting</h3>
-            <p><em>Medford, MA | January 2026 – May 2026</em></p>
+            <article class="role">
+              <div class="role-head">
+                <div>
+                  <h3 class="role-title">Strategy and Transactions Intern</h3>
+                  <p class="role-org">EY-Parthenon, Software Strategy Group</p>
+                </div>
+                <p class="role-meta"><span>May 2026 – Aug 2026</span><span>Singapore</span></p>
+              </div>
+              <ul class="role-points">
+                <li>Supported product, technology, and commercial due diligence engagements for PE-backed software M&amp;A transactions, synthesizing client materials and external research into structured analytical frameworks for senior team review.</li>
+                <li>Analyzed publicly available financial statements and conducted competitive product benchmarking across companies to assess growth signals and market positioning, producing research used by active M&amp;A deal teams.</li>
+              </ul>
+            </article>
           </div>
-          <button class="exp-toggle" type="button"><span class="toggle-label">Show details</span><span class="chevron">▾</span></button>
-        </div>
-        <div class="exp-details">
-          <div class="exp-details-inner">
-            <ul>
-              <li>Conducted qualitative research and competitive channel analysis for a healthcare nonprofit client, synthesizing marketing trend findings and friction-point solutions into recommendations adopted by the client team.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
 
-      <div class="experience-entry">
-        <div class="exp-header">
-          <div>
-            <h3>Software Developer – JumboCode</h3>
-            <p><em>Medford, MA | September 2025 – May 2026</em></p>
-          </div>
-          <button class="exp-toggle" type="button"><span class="toggle-label">Hide details</span><span class="chevron">▾</span></button>
-        </div>
-        <div class="exp-details">
-          <div class="exp-details-inner">
-            <ul>
-              <li>Developed dashboard UI components, including performance visualizations, and integrated Instagram and Facebook APIs to pull and backfill historical social metrics on a team-built full-stack analytics platform (React, Node.js, Express, PostgreSQL).</li>
-              <li>Built and iterated on features across weekly Agile sprints, contributing through feature branches and code review.</li>
-              <li>Contributed to a dedicated reliability and testing sprint across four social media API integrations, validating backfilling accuracy and daily sync stability, auditing token refresh procedures, configuring cron jobs for automated syncing, and testing integrations end-to-end.</li>
-              <li>Documented findings in the team wiki and surfaced them during weekly standups.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
+          <!-- Hidden until "Show more roles" is clicked -->
+          <div class="roles-more" id="moreRoles" inert>
+            <div class="roles-more-inner">
+              <article class="role">
+                <div class="role-head">
+                  <div>
+                    <h3 class="role-title">Student Consultant</h3>
+                    <p class="role-org">180 Degrees Consulting</p>
+                  </div>
+                  <p class="role-meta"><span>Jan 2026 – May 2026</span><span>Medford, MA</span></p>
+                </div>
+                <ul class="role-points">
+                  <li>Conducted qualitative research and competitive channel analysis for a healthcare nonprofit client, synthesizing marketing trend findings and friction-point solutions into recommendations adopted by the client team.</li>
+                </ul>
+              </article>
 
-      <div class="experience-entry collapsed">
-        <div class="exp-header">
-          <div>
-            <h3>TTC Analyst – Tufts Financial Group</h3>
-            <p><em>Medford, MA | September 2025 – September 2026</em></p>
-          </div>
-          <button class="exp-toggle" type="button"><span class="toggle-label">Show details</span><span class="chevron">▾</span></button>
-        </div>
-        <div class="exp-details">
-          <div class="exp-details-inner">
-            <ul>
-              <li>Selected through a competitive application and probability-based technical interview to join the quant trading pod within Tufts Financial Group.</li>
-              <li>Training covered expected value, probability, market making, live trading simulations, and brainteaser sessions modeled on quant firm interviews.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
+              <article class="role">
+                <div class="role-head">
+                  <div>
+                    <h3 class="role-title">Software Developer</h3>
+                    <p class="role-org">JumboCode</p>
+                  </div>
+                  <p class="role-meta"><span>Sep 2025 – May 2026</span><span>Medford, MA</span></p>
+                </div>
+                <ul class="role-points">
+                  <li>Developed dashboard UI components, including performance visualizations, and integrated Instagram and Facebook APIs to pull and backfill historical social metrics on a team-built full-stack analytics platform (React, Node.js, Express, PostgreSQL).</li>
+                  <li>Built and iterated on features across weekly Agile sprints, contributing through feature branches and code review.</li>
+                  <li>Contributed to a dedicated reliability and testing sprint across four social media API integrations, validating backfilling accuracy and daily sync stability, auditing token refresh procedures, configuring cron jobs for automated syncing, and testing integrations end-to-end.</li>
+                  <li>Documented findings in the team wiki and surfaced them during weekly standups.</li>
+                </ul>
+              </article>
 
-      <div class="experience-entry">
-        <div class="exp-header">
-          <div>
-            <h3>Data Science Intern – LeadUp Universe</h3>
-            <p><em>Singapore (Remote) | June 2025 – August 2025</em></p>
-          </div>
-          <button class="exp-toggle" type="button"><span class="toggle-label">Hide details</span><span class="chevron">▾</span></button>
-        </div>
-        <div class="exp-details">
-          <div class="exp-details-inner">
-            <ul>
-              <li>Built a data pipeline to clean and standardize 40,000+ lead records across 50+ inconsistent field formats using Python (pandas, NumPy, rapidfuzz), engineering city-state matching logic to enable geographic segmentation across 6 regional markets.</li>
-              <li>Analyzed standardized lead data to identify high-conversion customer segments and regional trends, synthesizing findings into a marketing deck adopted by the team to inform targeting strategy.</li>
-              <li>Generated 51 supporting visualizations in matplotlib across 6 demographic dimensions, including lead status, work experience, and job position, to surface market performance trends for stakeholder decision-making.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
+              <article class="role">
+                <div class="role-head">
+                  <div>
+                    <h3 class="role-title">TTC Analyst</h3>
+                    <p class="role-org">Tufts Financial Group</p>
+                  </div>
+                  <p class="role-meta"><span>Sep 2025 – Sep 2026</span><span>Medford, MA</span></p>
+                </div>
+                <ul class="role-points">
+                  <li>Selected through a competitive application and probability-based technical interview to join the quant trading pod within Tufts Financial Group.</li>
+                  <li>Training covered expected value, probability, market making, live trading simulations, and brainteaser sessions modeled on quant firm interviews.</li>
+                </ul>
+              </article>
 
-    <section id="projects">
-      <h2>Projects</h2>
-      <div class="projects-grid">
-        <div class="project-card">
-          <div class="project-content">
+              <article class="role">
+                <div class="role-head">
+                  <div>
+                    <h3 class="role-title">Data Science Intern</h3>
+                    <p class="role-org">LeadUp Universe</p>
+                  </div>
+                  <p class="role-meta"><span>Jun 2025 – Aug 2025</span><span>Singapore (Remote)</span></p>
+                </div>
+                <ul class="role-points">
+                  <li>Built a data pipeline to clean and standardize 40,000+ lead records across 50+ inconsistent field formats using Python (pandas, NumPy, rapidfuzz), engineering city-state matching logic to enable geographic segmentation across 6 regional markets.</li>
+                  <li>Analyzed standardized lead data to identify high-conversion customer segments and regional trends, synthesizing findings into a marketing deck adopted by the team to inform targeting strategy.</li>
+                  <li>Generated 51 supporting visualizations in matplotlib across 6 demographic dimensions, including lead status, work experience, and job position, to surface market performance trends for stakeholder decision-making.</li>
+                </ul>
+              </article>
+            </div>
+          </div>
+
+          <button class="btn btn-ghost roles-toggle" id="rolesToggle" type="button" aria-expanded="false" aria-controls="moreRoles">
+            <span class="roles-toggle-label">Show more roles</span>
+            <span class="chevron" aria-hidden="true"></span>
+          </button>
+        </div>
+      </section>
+
+      <section id="projects" class="section">
+        <h2 class="section-title">Projects</h2>
+        <div class="section-body project-grid">
+          <article class="project">
             <h3>FitWise</h3>
-            <div class="project-tags">
-              <span class="project-tag tag-category">Full-Stack Development</span>
-              <span class="project-tag tag-category">AI/ML</span>
-              <span class="project-tag tag-tech">Python</span>
-              <span class="project-tag tag-tech">Flask</span>
-              <span class="project-tag tag-tech">Next.js</span>
-              <span class="project-tag tag-tech">MediaPipe</span>
-              <span class="project-tag tag-tech">Gemini API</span>
-            </div>
+            <ul class="chips">
+              <li class="chip chip-accent">Full-Stack Development</li>
+              <li class="chip chip-accent">AI/ML</li>
+              <li class="chip">Python</li><li class="chip">Flask</li><li class="chip">Next.js</li>
+              <li class="chip">MediaPipe</li><li class="chip">Gemini API</li>
+            </ul>
             <p>
-              Developed an AI-powered virtual fitness trainer providing real-time form correction, rep counting, and motivational audio feedback 
-              using computer vision and AI at HackHarvard. Implemented pose detection via Google's MediaPipe and integrated Gemini API for 
-              intelligent motion analysis. Built a dual-process Python backend using Flask-SocketIO with a Next.js frontend featuring live skeleton overlay.
+              An AI-powered virtual fitness trainer built at HackHarvard that gives real-time form correction, rep counting,
+              and motivational audio feedback. Pose detection runs on Google's MediaPipe, the Gemini API handles motion
+              analysis, and a dual-process Python backend (Flask-SocketIO) feeds a Next.js frontend with a live skeleton overlay.
             </p>
             <div class="project-links">
-              <a href="https://github.com/kubsgok/FitWise" target="_blank" rel="noopener noreferrer">GitHub →</a>
+              <a href="https://github.com/kubsgok/FitWise" target="_blank" rel="noopener noreferrer">GitHub</a>
             </div>
-          </div>
-        </div>
+          </article>
 
-        <div class="project-card">
-          <div class="project-content">
+          <article class="project">
             <h3>Cinelog</h3>
-            <div class="project-tags">
-              <span class="project-tag tag-category">Full-Stack Development</span>
-              <span class="project-tag tag-tech">JavaScript</span>
-              <span class="project-tag tag-tech">Node.js</span>
-              <span class="project-tag tag-tech">MongoDB</span>
-              <span class="project-tag tag-tech">HTML/CSS</span>
-            </div>
+            <ul class="chips">
+              <li class="chip chip-accent">Full-Stack Development</li>
+              <li class="chip">JavaScript</li><li class="chip">Node.js</li><li class="chip">MongoDB</li><li class="chip">HTML/CSS</li>
+            </ul>
             <p>
-              A personal movie journal application that allows users to search, log, rate, and review movies they've watched. 
-              Features include user authentication, movie search integration, customizable ratings and reviews, date tracking, 
-              tagging system, and comprehensive statistics dashboard showing total movies watched, average ratings, and viewing 
-              trends over time. Built with a Node.js backend and MongoDB database for scalable data management.
+              A personal movie journal for searching, logging, rating and reviewing films. Includes user authentication,
+              movie search, custom ratings and reviews, date tracking, tagging, and a statistics dashboard for viewing trends
+              over time, built on a Node.js backend with MongoDB.
             </p>
             <div class="project-links">
-              <a href="https://github.com/kubsgok/cinelog" target="_blank" rel="noopener noreferrer">GitHub →</a>
+              <a href="https://github.com/kubsgok/cinelog" target="_blank" rel="noopener noreferrer">GitHub</a>
             </div>
-          </div>
-        </div>
+          </article>
 
-        <div class="project-card">
-          <div class="project-content">
+          <article class="project">
             <h3>Marketing Analysis</h3>
-            <div class="project-tags">
-              <span class="project-tag tag-category">Data Science</span>
-              <span class="project-tag tag-category">Analytics</span>
-              <span class="project-tag tag-tech">Python</span>
-              <span class="project-tag tag-tech">Pandas</span>
-              <span class="project-tag tag-tech">Matplotlib</span>
-              <span class="project-tag tag-tech">Excel</span>
-            </div>
+            <ul class="chips">
+              <li class="chip chip-accent">Data Science</li>
+              <li class="chip chip-accent">Analytics</li>
+              <li class="chip">Python</li><li class="chip">Pandas</li><li class="chip">Matplotlib</li><li class="chip">Excel</li>
+            </ul>
             <p>
-              Analyzed lead data using Python libraries and Microsoft Excel to determine target demographics for future LeadUp Universe course 
-              marketing campaigns. Performed comprehensive data cleaning, visualization, and statistical analysis to identify high-conversion 
-              customer segments and inform strategic marketing decisions.
+              Analyzed LeadUp Universe lead data with Python and Excel to find target demographics for future course
+              marketing campaigns. Covered data cleaning, visualization and statistical analysis to identify
+              high-conversion customer segments.
             </p>
             <div class="project-links">
-              <a href="LeadsAnalysisPresentation.pptx">Presentation →</a>
-              <a href="https://github.com/JoshuaGuirao/marketing-analysis" target="_blank" rel="noopener noreferrer">GitHub →</a>
+              <a href="LeadsAnalysisPresentation.pptx">Presentation</a>
+              <a href="https://github.com/JoshuaGuirao/marketing-analysis" target="_blank" rel="noopener noreferrer">GitHub</a>
             </div>
-          </div>
+          </article>
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
 
     <footer class="site-footer">
       <div class="footer-inner">
         <div>
-          <h2 class="footer-cta">Let's<span>Connect!</span></h2>
+          <h2 class="footer-cta">Let's <span>Connect!</span></h2>
           <p class="footer-cta-sub">Open to software engineering and data science opportunities. My inbox is always open.</p>
         </div>
 
         <ul class="contact-list">
           <li>
             <a class="contact-row" href="mailto:joshuaguirao24@gmail.com">
-              <div>
+              <span>
                 <span class="contact-label">Email</span>
                 <span class="contact-value">joshuaguirao24@gmail.com</span>
-              </div>
-              <span class="contact-arrow">↗</span>
+              </span>
+              <span class="contact-arrow" aria-hidden="true">↗</span>
             </a>
           </li>
           <li>
             <a class="contact-row" href="https://www.linkedin.com/in/joshua-guirao-636280198" target="_blank" rel="noopener noreferrer">
-              <div>
+              <span>
                 <span class="contact-label">LinkedIn</span>
                 <span class="contact-value">joshua-guirao</span>
-              </div>
-              <span class="contact-arrow">↗</span>
+              </span>
+              <span class="contact-arrow" aria-hidden="true">↗</span>
             </a>
           </li>
           <li>
             <a class="contact-row" href="https://github.com/joshuaguirao" target="_blank" rel="noopener noreferrer">
-              <div>
+              <span>
                 <span class="contact-label">GitHub</span>
                 <span class="contact-value">github.com/joshuaguirao</span>
-              </div>
-              <span class="contact-arrow">↗</span>
+              </span>
+              <span class="contact-arrow" aria-hidden="true">↗</span>
             </a>
           </li>
         </ul>
@@ -746,7 +406,10 @@
       <div class="footer-bottom-wrap">
         <div class="footer-bottom">
           <span>&copy; 2026 Joshua Guirao</span>
-          <span>BOS <span class="clock-time" id="clockBos">--:--</span> · SGP <span class="clock-time" id="clockSgp">--:--</span></span>
+          <span class="clocks">
+            <span class="clock">Boston <span class="clock-time" id="clockBos">--:--</span></span>
+            <span class="clock">Singapore <span class="clock-time" id="clockSgp">--:--</span></span>
+          </span>
         </div>
       </div>
     </footer>
